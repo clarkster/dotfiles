@@ -1,0 +1,35 @@
+[user]
+	name = Jim Clark
+	email = jim@clarkster.co.uk
+[filter "lfs"]
+	smudge = git-lfs smudge %f
+	required = true
+	clean = git-lfs clean %f
+[core]
+	autocrlf = input
+	editor = vim
+[branch]
+	autosetuprebase = always
+[commit]
+[alias]
+	co = checkout
+    s = status -s
+    c = commit --verbose
+    praise = blame
+    ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+    ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+    cl = clone
+    br = branch
+    r = reset
+    rh = reset --hard
+[url "git@github.com:"]
+	insteadOf = gh:
+
+[credential]
+	helper = osxkeychain
+[push]
+	default = current
+[rerere]
+	enabled = 1
+[advice]
+	pushNonFastForward = false
