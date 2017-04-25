@@ -1,6 +1,6 @@
 " https://dougblack.io/words/a-good-vimrc.html
 
-colorscheme desert         " awesome colorscheme
+colorscheme industry " awesome colorscheme
 syntax enable           " enable syntax processing
 
 set tabstop=4       " number of visual spaces per TAB
@@ -24,4 +24,8 @@ nnoremap <leader><space> :nohlsearch<CR>
 
 " highlight last inserted text
 nnoremap gV `[v`]
+
+" :W to do a sudo save - https://www.cyberciti.biz/faq/vim-vi-text-editor-save-file-without-root-permission/
+
+command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
 

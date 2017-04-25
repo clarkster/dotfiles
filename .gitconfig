@@ -1,6 +1,6 @@
 [user]
-	name = Jim Clark
-	email = jim@clarkster.co.uk
+    name = Jim Clark
+    email = jim.clark@digital.hmrc.gov.uk
 [filter "lfs"]
 	smudge = git-lfs smudge %f
 	required = true
@@ -24,9 +24,8 @@
     rh = reset --hard
 [url "git@github.com:"]
 	insteadOf = gh:
-
-[credential]
-	helper = osxkeychain
+[url "git@github.tools.tax.service.gov.uk:HMRC/"]
+    insteadOf = hmrc:
 [push]
 	default = current
 [rerere]
