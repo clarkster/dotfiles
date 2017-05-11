@@ -1,18 +1,9 @@
-export GOPATH=~/go
-
-source /etc/environment
-
-PATH=$PATH:~/bin:$GOPATH/bin
-export PATH
-
 export ZSH=~/.oh-my-zsh
 
 if type nvim > /dev/null 2>&1; then
   alias vim='nvim'
   alias vi='nvim'
 fi
-
-alias wifi='sudo systemctl restart NetworkManager'
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -57,7 +48,11 @@ ZSH_THEME="robbyrussell"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
-ZSH_TMUX_AUTOSTART=true
+# Auto tmux unless using the intellij built in window
+if ! ps -p $PPID | grep -q java; then
+    ZSH_TMUX_AUTOSTART=true;
+fi
+
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
